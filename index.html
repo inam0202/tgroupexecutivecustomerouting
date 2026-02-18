@@ -138,11 +138,12 @@
                 
                 {/* Hero Section */}
                 <header className="relative bg-slate-900 text-white shadow-xl overflow-hidden mb-6">
-                    <div className="relative w-full h-auto min-h-[250px] aspect-[4/3] md:aspect-[21/9]">
+                    {/* ปรับแก้: ลบ aspect ratio และ object-cover ออก เพื่อให้รูปแสดงเต็มสัดส่วนจริง */}
+                    <div className="relative w-full">
                     <img 
-                        src="https://www.terabyteplus.com/wp-content/uploads/2026/02/cover-landing-page.jpg" 
+                        src="https://www.terabyteplus.com/wp-content/uploads/2026/02/cover-landing-page-v2.jpg" 
                         alt="T.Group Executive Outing 2026 Poster" 
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto block"
                         onError={(e) => {
                         e.target.onerror = null; 
                         e.target.src = "https://placehold.co/800x600/1e293b/ffffff?text=Image+Not+Found";
@@ -214,7 +215,7 @@
                                     <p className="text-xs text-slate-500">ผู้ประสานงาน</p>
                                 </div>
                             </div>
-                            <a href="tel:0888888888" className="bg-green-500 text-white rounded-full p-3 shadow-md hover:bg-green-600 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center">
+                            <a href="tel:0992451955" className="bg-green-500 text-white rounded-full p-3 shadow-md hover:bg-green-600 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center">
                                 <Phone size={20} />
                             </a>
                         </div>
@@ -223,7 +224,7 @@
                 </main>
                 
                 <footer className="bg-white border-t border-slate-100 py-6 text-center text-slate-400 text-xs">
-                    <p>© 2026 T.Group Executive Outing</p>
+                    <p>© Terabyte Plus PCL.</p>
                 </footer>
 
                 </div>
@@ -305,3 +306,4 @@
     </script>
 </body>
 </html>
+
