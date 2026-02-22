@@ -59,8 +59,8 @@
             // ข้อมูล Agenda Day 1
             const agendaDay1 = [
                 { type: 'venue', name: "Toscana Valley Khao Yai", link: "https://maps.app.goo.gl/BpPSse2HrSkVWiXB8", icon: <MapPin className="text-orange-600" size={20} />, bg: "bg-orange-50 border-orange-100" },
-                { type: 'session', time: "13.00 – 13.25", title: "เดินทางถึง Toscana Valley Khao Yai", desc: "และลงทะเบียน", icon: <MapPin className="w-5 h-5 text-blue-600" /> },
-                { type: 'session', time: "13.25 – 13.30", title: "Welcome Speech", desc: "", icon: <Flag className="w-5 h-5 text-blue-600" /> },
+                { type: 'session', time: "13.00 – 13.25", title: "เดินทางถึง Toscana Valley Khao Yai และลงทะเบียน", icon: <MapPin className="w-5 h-5 text-blue-600" /> },
+                { type: 'session', time: "13.25 – 13.30", title: "Welcome Speech", desc: "By Khun Surasit Kiwprasopsak | Terabyte Plus PCL.", icon: <Flag className="w-5 h-5 text-blue-600" /> },
                 { 
                 type: 'session',
                 time: "13.30 – 15.30", 
@@ -73,17 +73,17 @@
                 { type: 'session', time: "15.30 – 15.35", title: "Group Photo", desc: "", icon: <User className="w-5 h-5 text-blue-600" /> },
                 { type: 'session', time: "15.35 – 15.50", title: "Coffee Break", desc: "", icon: <Coffee className="w-5 h-5 text-orange-500" /> },
                 { type: 'session', time: "15.50 – 16.00", title: "Group Introduction", desc: "", icon: <User className="w-5 h-5 text-blue-600" /> },
-                { type: 'session', time: "16.00 – 16.30", title: "Technology Update By HPE", desc: "", icon: <Zap className="w-5 h-5 text-green-600" /> },
-                { type: 'session', time: "16.30 – 16.45", title: "T.Cloud Gen3 Executive Update", desc: "", icon: <Zap className="w-5 h-5 text-green-600" /> },
-                { type: 'session', time: "16.45 – 17.00", title: "Skyfrog NextGen Executive Update", desc: "", icon: <Zap className="w-5 h-5 text-green-600" /> },
+                { type: 'session', time: "16.00 – 16.30", title: "Unlock AI Potential & Modernize Hybrid Cloud", desc: "By Khun Sirichai Sitthikul | Hewlett Packard Enterprise", icon: <Zap className="w-5 h-5 text-green-600" /> },
+                { type: 'session', time: "16.30 – 16.45", title: "T.Cloud Gen3 Executive Update", desc: "By Khun Boonchai Tungwattanapornchai | Terabyte Plus PCL.", icon: <Zap className="w-5 h-5 text-green-600" /> },
+                { type: 'session', time: "16.45 – 17.00", title: "Skyfrog NextGen Executive Update", desc: "By Khun Maytouch Udommahuntisuk | Skyfrog.,Ltd.", icon: <Zap className="w-5 h-5 text-green-600" /> },
                 { type: 'session', time: "17.00 – 18.00", title: "พักผ่อนตามอัธยาศัย", desc: "", icon: <Sun className="w-5 h-5 text-yellow-500" /> },
                 { type: 'venue', name: "Ribs Man", link: "https://maps.app.goo.gl/UJpQjfBdFzKicfGW9", icon: <Utensils className="text-red-600" size={20} />, bg: "bg-red-50 border-red-100" },
-                { type: 'session', time: "18.00 – 22.00", title: "ร่วมรับประทานอาหารเย็น", desc: "ที่ร้าน Ribs Man", icon: <Moon className="w-5 h-5 text-purple-600" /> },
+                { type: 'session', time: "18.00 – 22.00", title: "ร่วมรับประทานอาหารเย็น", desc: "@ Ribs Man", icon: <Moon className="w-5 h-5 text-purple-600" /> },
             ];
 
             // ข้อมูล Agenda Day 2
             const agendaDay2 = [
-                { type: 'session', time: "06.30 – 09.00", title: "รับประทานอาหารเช้า", desc: "ที่ห้องอาหาร Toscana Valley", icon: <Coffee className="w-5 h-5 text-orange-500" /> },
+                { type: 'session', time: "06.30 – 09.00", title: "รับประทานอาหารเช้า", desc: "@ ห้องอาหาร Toscana Valley", icon: <Coffee className="w-5 h-5 text-orange-500" /> },
                 { 
                     type: 'session', 
                     time: "07.00 – 14.00", 
@@ -118,6 +118,24 @@
                                         <div>
                                             <div className="text-xs text-orange-500 font-bold uppercase mb-0.5">Spa Activity</div>
                                             <div className="text-sm font-semibold text-slate-800">Toscana Valley</div>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white p-2 rounded-full shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
+                                        <Navigation size={16} />
+                                    </div>
+                                </div>
+                            </a>
+
+                            {/* Kirimaya Spa Button */}
+                            <a href="https://maps.app.goo.gl/EuYpq4UbXGbDE9cMA" target="_blank" className="block group decoration-0">
+                                <div className="bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-lg p-3 transition-all flex items-center justify-between shadow-sm hover:shadow-md">
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-white p-2 rounded-full text-orange-500">
+                                            <Sun size={18} />
+                                        </div>
+                                        <div>
+                                            <div className="text-xs text-orange-500 font-bold uppercase mb-0.5">Spa Activity</div>
+                                            <div className="text-sm font-semibold text-slate-800">Kirimaya Golf Resort and Spa</div>
                                         </div>
                                     </div>
                                     <div className="bg-white p-2 rounded-full shadow-sm text-orange-500 group-hover:scale-110 transition-transform">
@@ -215,7 +233,7 @@
                                     <p className="text-xs text-slate-500">ผู้ประสานงาน</p>
                                 </div>
                             </div>
-                            <a href="tel:0992451955" className="bg-green-500 text-white rounded-full p-3 shadow-md hover:bg-green-600 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center">
+                            <a href="tel:0888888888" className="bg-green-500 text-white rounded-full p-3 shadow-md hover:bg-green-600 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center">
                                 <Phone size={20} />
                             </a>
                         </div>
@@ -224,7 +242,7 @@
                 </main>
                 
                 <footer className="bg-white border-t border-slate-100 py-6 text-center text-slate-400 text-xs">
-                    <p>© Terabyte Plus PCL.</p>
+                    <p>© 2026 T.Group Executive Outing</p>
                 </footer>
 
                 </div>
@@ -306,4 +324,3 @@
     </script>
 </body>
 </html>
-
