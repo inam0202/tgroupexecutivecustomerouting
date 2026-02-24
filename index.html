@@ -58,8 +58,8 @@
 
             // ข้อมูล Agenda Day 1
             const agendaDay1 = [
-                { type: 'venue', name: "Toscana Valley Khao Yai", link: "https://maps.app.goo.gl/BpPSse2HrSkVWiXB8", icon: <MapPin className="text-orange-600" size={20} />, bg: "bg-orange-50 border-orange-100" },
-                { type: 'session', time: "13.00 – 13.25", title: "เดินทางถึง Toscana Valley Khao Yai และลงทะเบียน", icon: <MapPin className="w-5 h-5 text-blue-600" /> },
+                { type: 'venue', name: "Toscana Basilica Hall @ Toscana Valley Khao Yai", link: "https://maps.app.goo.gl/JgS3fqF3nskegR9f9", icon: <MapPin className="text-orange-600" size={20} />, bg: "bg-orange-50 border-orange-100" },
+                { type: 'session', time: "13.00 – 13.25", title: "เดินทางถึง Toscana Basilica Hall @ Toscana Valley Khao Yai และลงทะเบียน", desc: "@ Basilica Hall 2-3", icon: <MapPin className="w-5 h-5 text-blue-600" /> },
                 { type: 'session', time: "13.25 – 13.30", title: "Welcome Speech", desc: "By Khun Surasit Kiwprasopsak | Terabyte Plus PCL.", icon: <Flag className="w-5 h-5 text-blue-600" /> },
                 { 
                 type: 'session',
@@ -76,9 +76,34 @@
                 { type: 'session', time: "16.00 – 16.30", title: "Unlock AI Potential & Modernize Hybrid Cloud", desc: "By Khun Sirichai Sitthikul | Hewlett Packard Enterprise", icon: <Zap className="w-5 h-5 text-green-600" /> },
                 { type: 'session', time: "16.30 – 16.45", title: "T.Cloud Gen3 Executive Update", desc: "By Khun Boonchai Tungwattanapornchai | Terabyte Plus PCL.", icon: <Zap className="w-5 h-5 text-green-600" /> },
                 { type: 'session', time: "16.45 – 17.00", title: "Skyfrog NextGen Executive Update", desc: "By Khun Maytouch Udommahuntisuk | Skyfrog.,Ltd.", icon: <Zap className="w-5 h-5 text-green-600" /> },
-                { type: 'session', time: "17.00 – 18.00", title: "พักผ่อนตามอัธยาศัย", desc: "", icon: <Sun className="w-5 h-5 text-yellow-500" /> },
-                { type: 'venue', name: "Ribs Man", link: "https://maps.app.goo.gl/UJpQjfBdFzKicfGW9", icon: <Utensils className="text-red-600" size={20} />, bg: "bg-red-50 border-red-100" },
-                { type: 'session', time: "18.00 – 22.00", title: "ร่วมรับประทานอาหารเย็น", desc: "@ร้าน Ribs Man", icon: <Moon className="w-5 h-5 text-purple-600" /> },
+                { 
+                    type: 'session', 
+                    time: "17.00 – 18.00", 
+                    title: "พักผ่อนตามอัธยาศัย @ โรงแรม La Casetta by Toscana Valley", 
+                    desc: (
+                        <div className="mt-3">
+                            <a href="https://maps.app.goo.gl/f9eKEoXqX1CFmnq19" target="_blank" className="block group decoration-0">
+                                <div className="bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-3 transition-all flex items-center justify-between shadow-sm hover:shadow-md">
+                                    <div className="flex items-center gap-3">
+                                        <div className="bg-white p-2 rounded-full text-blue-600 shadow-sm">
+                                            <MapPin size={18} />
+                                        </div>
+                                        <div>
+                                            <div className="text-xs text-blue-600 font-bold uppercase mb-0.5">Accommodation</div>
+                                            <div className="text-sm font-semibold text-slate-800">โรงแรม La Casetta</div>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white p-2 rounded-full shadow-sm text-blue-600 group-hover:scale-110 transition-transform">
+                                        <Navigation size={16} />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    ), 
+                    icon: <Sun className="w-5 h-5 text-yellow-500" /> 
+                },
+                { type: 'venue', name: "Ribs Mannn", link: "https://maps.app.goo.gl/UJpQjfBdFzKicfGW9", icon: <Utensils className="text-red-600" size={20} />, bg: "bg-red-50 border-red-100" },
+                { type: 'session', time: "18.00 – 22.00", title: "รับประทานอาหารเย็น (Networking Dinner)", desc: "@ ร้าน Ribs Mannn", icon: <Moon className="w-5 h-5 text-purple-600" /> },
             ];
 
             // ข้อมูล Agenda Day 2
@@ -287,35 +312,44 @@
                     {!isLast && <div className="w-0.5 h-full bg-slate-200 my-1"></div>}
                     </div>
                     <div className={`flex-1 pb-8 ${isLast ? 'pb-0' : ''}`}>
-                    <div className={`p-4 rounded-xl border transition-all duration-300 ${item.highlight ? 'bg-white border-blue-200 shadow-md ring-1 ring-blue-50' : 'bg-white border-slate-100 shadow-sm'}`}>
+                    
+                    {/* เปลี่ยนแปลง CSS ของการ์ด Highlight ที่นี่ */}
+                    <div className={`p-4 rounded-2xl border transition-all duration-300 ${item.highlight ? 'bg-gradient-to-br from-white to-blue-50/80 border-blue-300 shadow-lg shadow-blue-100/50 transform hover:-translate-y-1' : 'bg-white border-slate-100 shadow-sm'}`}>
+                        
+                        {/* ป้าย Highlight Session ด้านบนสุด */}
+                        {item.highlight && (
+                            <div className="mb-3">
+                                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm inline-flex items-center">
+                                    <Zap size={12} className="mr-1.5" /> Highlight Session
+                                </span>
+                            </div>
+                        )}
+
                         <div className="flex items-center text-xs font-bold text-blue-600 mb-2 uppercase tracking-wide">
                         <Clock size={12} className="mr-1.5" />
                         {item.time}
                         </div>
-                        <h3 className="font-bold text-slate-800 text-base mb-1.5 leading-snug">{item.title}</h3>
+                        
+                        {/* ปรับขนาดตัวอักษรหัวข้อถ้าเป็น Highlight */}
+                        <h3 className={`font-bold mb-1.5 leading-snug ${item.highlight ? 'text-lg text-blue-900' : 'text-slate-800 text-base'}`}>{item.title}</h3>
                         
                         {/* Modified to handle JSX in desc */}
                         {item.desc && (
                             typeof item.desc === 'string' ? 
-                            <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p> : 
-                            <div className="text-sm text-slate-500 leading-relaxed">{item.desc}</div>
+                            <p className={`text-sm leading-relaxed ${item.highlight ? 'text-slate-600' : 'text-slate-500'}`}>{item.desc}</p> : 
+                            <div className={`text-sm leading-relaxed ${item.highlight ? 'text-slate-600' : 'text-slate-500'}`}>{item.desc}</div>
                         )}
                         
                         {item.highlight && item.image && (
-                        <div className="mt-4 rounded-lg overflow-hidden shadow-sm border border-slate-100">
+                        <div className="mt-4 rounded-xl overflow-hidden shadow-md border border-white/50 relative">
                             <img 
                             src={item.image} 
                             alt={item.title} 
-                            className="w-full h-auto object-cover"
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </div>
                         )}
                         
-                        {item.highlight && !item.image && (
-                        <div className="mt-3 pt-3 border-t border-slate-100 flex items-center text-xs text-slate-400">
-                            <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded font-medium">Highlight Session</span>
-                        </div>
-                        )}
                     </div>
                     </div>
                 </div>
